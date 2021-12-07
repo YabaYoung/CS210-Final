@@ -25,7 +25,7 @@ public class RockPaperScissor {
            
          else {
             
-            gameProcess.whoWon(rpsInput, gameProcess.computerMove());
+            gameProcess.whoWon(rpsInput, gameProcess.getComputerMove());
   
             System.out.println("Computer's win count: " + gameProcess.getComputerWinCount());
             System.out.println("User's win count: " + gameProcess.getPlayerWinCount());
