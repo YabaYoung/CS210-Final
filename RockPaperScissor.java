@@ -12,7 +12,7 @@ public class RockPaperScissor {
       
       Game gameProcess = new Game();
       
-      String rpsInput;
+      String rpsInput = "";
       
       
       while (true) {

@@ -10,12 +10,14 @@ public class Game {
    private int userWinCount;
    private int computerWinCount;
    
-      
-   public void computerMove() {
+  
+   public String getComputerMove() {
       
       String[] paperRockScissors = {"rock", "paper", "scissors"};
       
       computer = paperRockScissors[new Random().nextInt(paperRockScissors.length)]; 
+      
+      return computer;
    }   
    public void whoWon(String user, String computerInput) {
       
@@ -23,13 +25,16 @@ public class Game {
          switch (computer) {
             case "paper":
                computerWinCount+= 1;
+               System.out.println(computer);
                System.out.println("Computer wins! You lost");
                break;
             case "scissors": 
                userWinCount+= 1;
+               System.out.println(computer);
                System.out.println("User has won");
                break;
             case "rock": 
+               System.out.println(computer);
                System.out.println("That was a tie!");
                break;              
          }
@@ -71,9 +76,6 @@ public class Game {
    
    public int getPlayerWinCount() {
       return userWinCount;
-   }
-   public String getComputerMove() {
-      return computer;
    }
    public int getComputerWinCount() {
       return computerWinCount;
