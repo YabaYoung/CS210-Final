@@ -16,8 +16,7 @@ public class Game {
       String[] paperRockScissors = {"rock", "paper", "scissors"};
       
       computer = paperRockScissors[new Random().nextInt(paperRockScissors.length)]; 
-      
-      return computer;
+     
    }   
    public void whoWon(String user, String computerInput) {
       
