@@ -18,11 +18,11 @@ public class RockPaperScissor {
       
       Scanner fileReader = new Scanner(greetingsFile);
       
-      System.out.println(fileReader.nextLine());
+      while (fileReader.hasNext()) {
+         System.out.println(fileReader.nextLine());   
+      }
       
       fileReader.close();
-      
-      System.out.println("Read the instruction below to start playing rock, paper, scissors!");
       
       while (true) {
       
