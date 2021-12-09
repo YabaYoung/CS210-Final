@@ -3,43 +3,46 @@
 // File: RockPaperScissor.java
 
 import java.util.Scanner;
+import java.util.Random;
+import java.io.*; // Import Java I/O classes
 
 public class RockPaperScissor { 
    
-   public static void main (String[] args) {
-   
-      Scanner keyboard = new Scanner(System.in);
+   public static void main (String[] args) throws IOException {
       
       Game gameProcess = new Game();
       
       String rpsInput = "";
       
+      File greetingsFile = new File("Greetings.txt");
+      
+      Scanner fileReader = new Scanner(greetingsFile);
+      
+      System.out.println(fileReader.nextLine());
+      
+      fileReader.close();
+      
+      System.out.println("Read the instruction below to start playing rock, paper, scissors!");
       
       while (true) {
-         System.out.println("Please input what you want to use against the computer, paper, rock, or scissors? ");
-         rpsInput = keyboard.nextLine();
+      
+      Scanner keyboard = new Scanner(System.in); 
+      
+      System.out.println("\nPlease input what you want to use against the computer, paper, rock, or scissors? FYI, to quit playing please enter q, or quit.");
+      
+      rpsInput = keyboard.nextLine();
          
          if (rpsInput.toLowerCase().equals("q") || rpsInput.toLowerCase().equals("quit") || rpsInput.equals("Quit")) {
             break;
          } 
            
          else {
-            
             gameProcess.whoWon(rpsInput, gameProcess.getComputerMove());
   
             System.out.println("Computer's win count: " + gameProcess.getComputerWinCount());
-            System.out.println("User's win count: " + gameProcess.getPlayerWinCount());
-         
-            if (gameProcess.getComputerWinCount() > gameProcess.getPlayerWinCount()) {
-               System.out.println("Dang! You got beaten by a computer. That means you are worse than a bot.\n");
-            }
-            else if (gameProcess.getComputerWinCount() < gameProcess.getPlayerWinCount()) {
-               System.out.println("Congratulations you won against a computer, as expect from a genius like you.\n");
-            }
-            else {
-               System.out.println("Tied?! I guess you are the same as a bot.\n");
-            }   
+            System.out.println("User's win count: " + gameProcess.getPlayerWinCount()); 
          }
-      }         
+      }   
+      gameProcess.printWinOrLoss();            
    }      
 }
