@@ -10,19 +10,11 @@ public class RockPaperScissor {
    
    public static void main (String[] args) throws IOException {
       
-      Game gameProcess = new Game();
-      
       String rpsInput = "";
       
-      File greetingsFile = new File("Greetings.txt");
+      Game gameProcess = new Game();
       
-      Scanner fileReader = new Scanner(greetingsFile);
-      
-      while (fileReader.hasNext()) {
-         System.out.println(fileReader.nextLine());   
-      }
-      
-      fileReader.close();
+      printGreetingFromFile();
       
       while (true) {
       
@@ -44,5 +36,16 @@ public class RockPaperScissor {
          }
       }   
       gameProcess.printWinOrLoss();            
-   }      
+   }
+   public static void printGreetingFromFile() throws IOException {
+      File greetingsFile = new File("Greetings.txt");
+      
+      Scanner fileReader = new Scanner(greetingsFile);
+     
+      while (fileReader.hasNext()) {
+         System.out.println(fileReader.nextLine());   
+      }
+      
+      fileReader.close();   
+   }     
 }
