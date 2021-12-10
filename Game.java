@@ -6,7 +6,7 @@
 import java.util.Random;
 
 public class Game {
-   // Instaiate private fields
+   // Instantiate private fields
    private String computer;
    private int userWinCount;
    private int computerWinCount;
